@@ -1,0 +1,128 @@
+body {
+    font-family: 'Pacifico', cursive; /* Romantic font */
+    text-align: center; /* Center-align text */
+    margin: 0; /* Remove default margin */
+    background-color: #FADADD; /* Set background color to light pink */
+    overflow: hidden; /* Prevent scrolling */
+    cursor: url('heart-cursor.png'), auto; /* Heart cursor */
+}
+
+#container {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items horizontally */
+    justify-content: center; /* Center-align items vertically */
+    height: 100vh; /* Make the container full viewport height */
+    padding: 20px; /* Add padding for better spacing on phones */
+}
+
+#video-box {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 90%; /* Responsive width */
+    max-width: 300px; /* Maximum width */
+    height: 150px; /* Responsive height */
+    border: 2px solid #FF69B4; /* Pink border */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    z-index: 1000; /* Ensure it's on top */
+}
+
+#image-container {
+    /* This container will hold the images */
+}
+
+#question {
+    font-size: 32px; /* Smaller font size for phones */
+    color: #FF69B4; /* Pink color for the question */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow for better readability */
+    margin-bottom: 20px; /* Add space below the question */
+}
+
+#options {
+    margin-top: 20px; /* Add space above the options */
+}
+
+button {
+    padding: 10px 20px; /* Set padding for buttons */
+    margin: 0 10px; /* Set margin around buttons */
+    font-size: 20px; /* Smaller font size for phones */
+    background-color: #FB607F; /* Set button background color */
+    color: white; /* Set text color to white */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Set cursor to pointer on hover */
+    border-radius: 10px; /* Rounded corners */
+    transition: none; /* Remove hover effects */
+}
+
+#emoji-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+#message {
+    font-size: 24px; /* Smaller font size for phones */
+    color: #FF69B4;
+    margin-top: 20px;
+    display: none; /* Hidden by default */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow for better readability */
+    white-space: pre-line; /* Preserve line breaks */
+    line-height: 1.5; /* Improve line spacing */
+}
+
+#hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* Candlelight effect */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 20%, #FADADD 70%);
+    animation: flicker 2s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
